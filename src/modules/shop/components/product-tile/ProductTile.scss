@@ -1,0 +1,35 @@
+@import 'src/sass/variables';
+
+.Tile {
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  min-height: 390px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+
+  .title {
+    font-weight: $bold;
+    margin-bottom: 20px;
+    min-height: 48px
+  }
+
+  img {
+    height: auto;
+    margin: 0 auto;
+    max-height: 125px;
+    max-width: 165px;
+    width: auto;
+  }
+
+  .amount {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .Button {
+    margin-top: auto;
+  }
+}

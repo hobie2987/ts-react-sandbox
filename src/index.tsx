@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import './index.scss';
+import { Shop } from './modules';
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<Shop />} />
+              <Route path="/shop" element={<Shop />} />
+          </Routes>
+      </BrowserRouter>
   </React.StrictMode>
 );
 

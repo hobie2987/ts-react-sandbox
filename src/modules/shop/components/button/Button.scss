@@ -1,0 +1,30 @@
+@import 'src/sass/variables';
+
+.Button {
+  border: 2px solid $soft-black;
+  background-color: transparent;
+  max-width: 140px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: $bold;
+  color: $soft-black;
+  font-size: 1rem;
+  letter-spacing: .2px;
+  max-width: 100%;
+
+  &.selected {
+    border: 2px solid $fuchsia;
+    background-color: $fuchsia;
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $fuchsia;
+    border-color: $fuchsia;
+  }
+}
