@@ -20,7 +20,7 @@ export default function ProductTile(props: { product: Product }) {
                 <span>{product.model}</span>
             </div>
 
-            <img src={product.urls['icon']} />
+            <img src={product.urls['icon']} alt={product.model} />
 
             <div className="amount">
                 <Quantity min={1}
