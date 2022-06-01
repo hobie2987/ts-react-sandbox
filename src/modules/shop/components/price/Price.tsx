@@ -1,8 +1,13 @@
 import './Price.scss';
 
-export default function Price(props: { value: string | number | undefined }) {
-    if(props.value)
+const USD = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+});
+
+export default function Price(props: { value: number | undefined }) {
+
         return (
-            <span className="Price">$ {props.value}</span>
+            <span className="Price">{USD.format(props.value)}</span>
         );
 }
