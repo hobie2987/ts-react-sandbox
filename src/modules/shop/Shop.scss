@@ -2,13 +2,24 @@
 @import "src/sass/mixins";
 
 .Shop {
+  margin: auto;
+  max-width: 1280px;
+  padding: 0 30px;
 
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include breakpoint-md {
+      grid-template-columns: 1fr 360px;
+    }
+  }
 
   .tiles {
     display: grid;
     grid-template-columns: 1fr;
 
-    @include breakpoint(sm) {
+    @include breakpoint-sm {
       grid-template-columns: 1fr 1fr;
     }
 
