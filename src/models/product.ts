@@ -3,7 +3,7 @@ export default interface Product {
     category: string;
     id: string;
     model: string;
-    price?: string | number;
+    price?: number;
     sku?: string;
     subscriptions: string[];
     teasers: {
