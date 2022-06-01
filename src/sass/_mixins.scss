@@ -1,6 +1,10 @@
 @import "src/sass/variables";
 
 // Media Queries (Breakpoints)
+@mixin breakpoint-xxs {
+  @media (min-width: $screen-xxs) { @content }
+}
+
 @mixin breakpoint-xs {
   @media (min-width: $screen-xs) { @content }
 }
