@@ -3,7 +3,6 @@
 .Button {
   border: 2px solid $soft-black;
   background-color: transparent;
-  max-width: 140px;
   padding: 10px 15px;
   border-radius: 6px;
   font-weight: $bold;
@@ -26,5 +25,9 @@
     cursor: pointer;
     color: $fuchsia;
     border-color: $fuchsia;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 }

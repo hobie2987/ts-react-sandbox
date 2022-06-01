@@ -14,8 +14,10 @@ export default function Button(props: ButtonProps) {
     }
 
     return (
-        <div className={ props.selected ? 'Button selected' : 'Button' } onClick={clicked}>
+        <button className={ props.selected ? 'Button selected' : 'Button' }
+            disabled={props.disabled}
+            onClick={clicked}>
             {props.label}
-        </div>
+        </button>
     );
 }
