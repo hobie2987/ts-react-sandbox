@@ -1,0 +1,58 @@
+@import 'src/sass/variables';
+
+.OrderSummary {
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  min-height: 415px;
+  margin: 10px;
+  padding: 20px;
+
+  h4 {
+    font-size: 22px;
+    line-height: 34px;
+    font-weight: 400;
+    color: $soft-black;
+    border-bottom: 1px solid #f5f4f3;
+    margin-top: 0;
+    padding-bottom: 8px;
+  }
+
+  .cart-item {
+    //display: grid;
+    //grid-template-columns: 1fr 1fr;
+    display: flex;
+    place-content: center space-between;
+    margin-bottom: 15px;
+
+    .item-name {
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: .2px;
+      line-height: 25px;
+      color: $soft-black
+    }
+
+    .item-qty {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .item-price {
+      margin-left: auto;
+    }
+  }
+
+  .Button {
+    margin-top: auto;
+    color: $white;
+    background-color: $soft-black;
+
+    &:hover {
+      background-color: $fuchsia;
+      border-color: $fuchsia;
+    }
+  }
+}
