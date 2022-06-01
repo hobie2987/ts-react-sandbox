@@ -23,12 +23,7 @@
       "types",
       "node_modules/@types"
     ],
-    "baseUrl": ".",
-    "paths": {
-      "~services": ["src/services"],
-      "~modules": ["src/modules"],
-      "~models": ["src/models"]
-    }
+    "baseUrl": "."
   },
   "include": [
     "src",
