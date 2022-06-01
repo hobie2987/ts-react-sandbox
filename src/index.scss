@@ -1,4 +1,5 @@
 @import './sass/variables';
+@import './sass/mixins';
 
 body {
   background-color: $light-grey;
@@ -13,4 +14,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
 }
