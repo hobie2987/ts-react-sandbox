@@ -26,7 +26,6 @@
       bottom: 10px;
 
       @include breakpoint-md {
-        bottom: unset;
         top: 10px;
       }
     }

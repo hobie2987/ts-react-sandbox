@@ -1,5 +1,5 @@
 import './Filters.scss';
-import {Tab, Tabs} from "@mui/material";
+import { Tab, Tabs } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Filters() {

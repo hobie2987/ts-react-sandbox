@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 import { ProductsCatalog } from "../../../../namespaces/products-catalog";
 
 export default function Tiles(props: { type: string }) {
+    const [type] = useState(() => props.type);
     const [products, setProducts] = useState(() => []);
 
     useEffect(() => {
         ProductsCatalog.getCatalog().subscribe((catalog) => {
-            const items = catalog[props.type]
+            const items = catalog[type]
             setProducts(() => Object.values(items))
         })
     }, [props.type])
