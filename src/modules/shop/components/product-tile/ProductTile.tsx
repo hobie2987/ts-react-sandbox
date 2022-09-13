@@ -1,47 +1,52 @@
-import {useEffect, useState} from "react";
+// react
+import { useEffect, useState } from "react";
+// namespaces
+import { OrderSession } from "../../../../namespaces/order-session";
+// models
+import Product from "../../../../models/product";
+// components
+import './ProductTile.scss';
 import Button from '../button/Button';
 import Quantity from '../quantity/Quantity';
 import Price from "../price/Price";
-import Product from "../../../../models/product";
-import './ProductTile.scss';
-import { Cart } from "../../../../services";
-
+import { Cart } from "../../../../models/session";
+import { useCart } from "../../../../hooks";
 
 export default function ProductTile(props: { product: Product }) {
-    const [selected, setSelected] = useState(false)
-    const [product] = useState(props.product)
-
-    const addToCart = (qty?: number) => Cart.add(product.sku, qty).then((items) => {
-        setSelected(items.has(product.sku));
-    });
-
-
-    const removeFromCart = () => Cart.remove(product.sku).then((items) => {
-        setSelected(items.has(product.sku));
-    });
+    const [product]  = useState(() => props.product)
+    const [limit] = useState(() => product.qty_limit === -1 ? Infinity : product.qty_limit);
+    const [selected, setSelected] = useState(() => false)
+    const [quantity, setQuantity] = useState(() => 0);
+    const [cart] = useCart();
 
     useEffect(() => {
-        Cart.getItems().then((items) => {
-            // const item = items.get(product.sku);
-            setSelected(items.has(product.sku));
-            // initialize quantity
-        })
-    });
+        updateState(cart)
+    })
 
+    function updateQuantity(qty?: number) {
+        OrderSession.addItem(product.sku, qty).then(updateState);
+    }
+
+    function updateState(cart: Cart) {
+        const item = cart.items.find(i => i.sku === product.sku)
+        setSelected(() => !!item);
+        setQuantity(() => item?.quantity || 0);
+    }
 
     return (
         <div className="Tile">
             <div className="title">
-                <span>{product.model}</span>
+                <span>{`${product.vendor}  ${product.model}`}</span>
             </div>
 
             <img src={product.urls['icon']} alt={product.model} />
 
             <div className="amount">
-                <Quantity min={1}
-                          zero={removeFromCart}
+                <Quantity value={quantity}
+                          min={1}
+                          max={limit}
                           disabled={!selected}
-                          onChange={addToCart}/>
+                          onChange={updateQuantity}/>
                 <Price value={product.price} />
             </div>
 
@@ -49,7 +54,7 @@ export default function ProductTile(props: { product: Product }) {
             <Button label={selected ? 'Selected' : 'Select'}
                     selected={selected}
                     disabled={selected}
-                    action={addToCart}/>
+                    action={updateQuantity}/>
         </div>
     );
 }

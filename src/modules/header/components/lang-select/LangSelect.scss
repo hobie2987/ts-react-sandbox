@@ -1,0 +1,28 @@
+
+.lang-select {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px!important;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding-top: 0px !important;
+
+
+  &:before {
+    border-bottom: 0 !important;
+  }
+}
+
+.lang-menu {
+  background-color: #f5f4f3;
+
+  ul {
+    row-gap: 40px;
+
+    li {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      margin: 5px 10px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "src/sass/variables";
+@import "src/sass/mixins";
+
+.tiles {
+  display: grid;
+  row-gap: 15px;
+  column-gap: 15px;
+  grid-template-columns: 1fr;
+
+  @include breakpoint-sm {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint-lg {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

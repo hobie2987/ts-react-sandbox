@@ -10,7 +10,8 @@ export default interface Product {
         bullets: string[];
         header: string;
         pricing: string;
-    }
+    },
+    qty_limit: number;
     urls: Record<string, string>;
     vendor: string;
 }

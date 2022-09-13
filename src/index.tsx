@@ -1,24 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+    BrowserRouter as Router, Navigate,
+    Route,
+    Routes
+} from "react-router-dom";
 import './index.scss';
-import { Shop } from './modules';
+import { Shop, Header } from './modules';
 import reportWebVitals from './reportWebVitals';
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-      <BrowserRouter>
-          <Routes>
-              <Route path="/" element={<Shop />} />
-              <Route path="/shop" element={<Shop />} />
-          </Routes>
-      </BrowserRouter>
-  </React.StrictMode>
+    <React.StrictMode>
+        <Header></Header>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Navigate to="/shop/cameras" />}/>
+                <Route path="/shop/*" element={<Shop />} />
+            </Routes>
+        </Router>
+    </React.StrictMode>
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

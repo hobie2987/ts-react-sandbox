@@ -1,32 +1,23 @@
 import './Shop.scss';
-import { Loading, ProductTile, OrderSummary } from './components';
-import { CATALOG } from "../../models/api";
-import { GET } from "../../services";
-import useSWR from 'swr';
-import Product from "../../models/product";
+import { OrderSummary } from './components';
+import Filters from "./components/tabs/Filters";
+import Tiles from "./components/tiles/Tiles";
+import { Route, Routes } from "react-router-dom";
 
 export default function Shop() {
-    const { data, error } = useSWR(CATALOG, GET)
-    const cameras: Product[] = data?.cameras ? Object.values(data.cameras) : [];
-
-    if (error) {
-        return <div>Oops, something broke</div>
-    }
-
-    if (!cameras.length) {
-        return <Loading />
-    }
 
     return (
         <div className="Shop">
             <h1>Buy Matterport</h1>
+            <Filters></Filters>
             <div className="content">
-                <div className="tiles">
-                    {cameras.map(camera => (
-                        <ProductTile key={camera.id} product={camera} />
-                    ))}
+                <Routes>
+                    <Route path="/cameras" element={<Tiles type="cameras" />} />
+                    <Route path="/accessories" element={<Tiles type="accessories" />} />
+                </Routes>
+                <div className="order-summary">
+                    <OrderSummary />
                 </div>
-                <OrderSummary />
             </div>
         </div>
     );

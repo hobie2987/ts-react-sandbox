@@ -5,33 +5,27 @@ interface QuantityProps {
     min?: number;
     max?: number;
     disabled?: boolean;
-    zero?: Function;
     onChange?: Function;
+    value: number;
 }
 
 export default function Quantity(props: QuantityProps) {
-    const [min] = useState(props.min || 0);
     const [max] = useState(props.max || Infinity);
-    const [qty, setQty] = useState(min || 0);
+    const qty = props.value || props.min
 
     function inc() {
-        const newQty = (qty + 1) > max ? max : qty + 1;
-        setQty(newQty);
+        const newQty = Math.min(qty + 1, max);
         qtyChange(newQty);
     }
 
     function dec() {
-        const newQty = (qty - 1) < min ? min : (qty - 1)
-        setQty(newQty)
-        if (qty - 1 === 0 && props.zero) {
-            props?.zero();
-        } else {
-            qtyChange(newQty);
-        }
+        const newQty = Math.max(qty - 1, 0);
+        qtyChange(newQty);
+
     }
 
     function qtyChange(q: number) {
-        if (props.onChange) {
+        if (q !== qty && props.onChange) {
             props.onChange(q);
         }
     }

@@ -1,0 +1,20 @@
+{
+  "i18n": {
+    "default": "EN",
+    "languages": [
+      { "code": "EN", "name": "English", "locale": "en-US" },
+      { "code": "ES", "name": "Español", "locale": "es-ES" },
+      { "code": "IT", "name": "Italiano", "locale": "it-IT" },
+      { "code": "FR", "name": "Français", "locale": "fr-FR" },
+      { "code": "DE", "name": "Deutsch", "locale": "de-DE" },
+      { "code": "JA", "name": "日本語",   "locale": "ja-JP" },
+      { "code": "KO", "name": "한국어",   "locale": "ko-KP" }
+    ]
+  },
+  "currency": {
+    "default": "USD"
+  },
+  "geoIp": {
+    "url": "https://static.matterport.com/geoip/"
+  }
+}

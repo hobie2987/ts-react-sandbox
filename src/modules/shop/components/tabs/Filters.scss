@@ -1,0 +1,25 @@
+.filters {
+  button {
+    color: #222;
+    font-family: "IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    line-height: 22px;
+    margin-top: 10px;
+    margin-right: 20px;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    text-transform: capitalize;
+
+    &.Mui-selected {
+      color: #ff3158;
+    }
+  }
+
+  span.MuiTabs-indicator {
+    background-color: #ff3158;
+    bottom: 5px;
+  }
+}

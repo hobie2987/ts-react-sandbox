@@ -7,7 +7,6 @@
   flex-direction: column;
   height: fit-content;
   min-height: 415px;
-  margin: 10px;
   padding: 20px;
 
   h4 {
@@ -21,8 +20,6 @@
   }
 
   .cart-item {
-    //display: grid;
-    //grid-template-columns: 1fr 1fr;
     display: flex;
     place-content: center space-between;
     margin-bottom: 15px;
