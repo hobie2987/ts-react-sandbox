@@ -12,6 +12,7 @@ export default function Shop() {
             <Filters></Filters>
             <div className="content">
                 <Routes>
+                    <Route path="/plans" element={<Tiles type="subscriptions" />} />
                     <Route path="/cameras" element={<Tiles type="cameras" />} />
                     <Route path="/accessories" element={<Tiles type="accessories" />} />
                 </Routes>

@@ -23,7 +23,7 @@
 
     .OrderSummary {
       position: sticky;
-      bottom: 10px;
+      bottom: 0;
 
       @include breakpoint-md {
         top: 10px;
