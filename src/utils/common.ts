@@ -10,3 +10,15 @@ export function isUndefined(value: any): boolean {
 export function isNullOrUndefined(value: any): boolean {
     return isNull(value) || isUndefined(value);
 }
+
+export function isString(value: any): boolean {
+    return typeof value === 'string'
+}
+
+export function isObject(value: any): boolean {
+    return typeof value === 'object' && !isArray(value) && !isNull(value)
+}
+
+export function isArray(value: any): boolean {
+    return Array.isArray(value)
+}
