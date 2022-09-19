@@ -1,0 +1,13 @@
+{
+  "HEADER.GET_STARTED_FREE": "Commencez gratuitement",
+  "FILTERS.PLANS": "Des plans",
+  "FILTERS.CAMERAS": "Appareils photo",
+  "FILTERS.ACCESSORIES": "Accessoires",
+  "BUTTON.SELECT": "Sélectionner",
+  "BUTTON.SELECTED": "Choisi",
+  "ORDER_SUMMARY.HEADING": "Récapitulatif de la commande",
+  "ORDER_SUMMARY.EMPTY_CART": "Votre panier est vide",
+  "ORDER_SUMMARY.TODAYS_TOTAL": "La somme d'aujourd'hui",
+  "ORDER_SUMMARY.BUTTON.CLEAR_CART": "Dégager",
+  "ORDER_SUMMARY.BUTTON.CHECK_OUT": "Vérifier"
+}

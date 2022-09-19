@@ -1,0 +1,13 @@
+{
+  "HEADER.GET_STARTED_FREE": "Empezar Gratis",
+  "FILTERS.PLANS": "Planes",
+  "FILTERS.CAMERAS": "Cámaras",
+  "FILTERS.ACCESSORIES": "Accesorios",
+  "BUTTON.SELECT": "Seleccionar",
+  "BUTTON.SELECTED": "Seleccionado",
+  "ORDER_SUMMARY.HEADING": "Resumen del pedido",
+  "ORDER_SUMMARY.EMPTY_CART": "Su carrito está vacío",
+  "ORDER_SUMMARY.TODAYS_TOTAL": "Total de hoy",
+  "ORDER_SUMMARY.BUTTON.CLEAR_CART": "Clara",
+  "ORDER_SUMMARY.BUTTON.CHECK_OUT": "Revisar"
+}

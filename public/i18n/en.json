@@ -1,0 +1,13 @@
+{
+  "HEADER.GET_STARTED_FREE": "Get Started Free",
+  "FILTERS.PLANS": "Plans",
+  "FILTERS.CAMERAS": "Cameras",
+  "FILTERS.ACCESSORIES": "Accessories",
+  "BUTTON.SELECT": "Select",
+  "BUTTON.SELECTED": "Selected",
+  "ORDER_SUMMARY.HEADING": "Order summary",
+  "ORDER_SUMMARY.EMPTY_CART": "Your cart is empty",
+  "ORDER_SUMMARY.TODAYS_TOTAL": "Today's total",
+  "ORDER_SUMMARY.BUTTON.CLEAR_CART": "Clear Cart",
+  "ORDER_SUMMARY.BUTTON.CHECK_OUT": "Check Out"
+}

@@ -1,0 +1,13 @@
+{
+  "HEADER.GET_STARTED_FREE": "Kostenlos starten",
+  "FILTERS.PLANS": "Pläne",
+  "FILTERS.CAMERAS": "Kameras",
+  "FILTERS.ACCESSORIES": "Zubehör",
+  "BUTTON.SELECT": "Auswählen",
+  "BUTTON.SELECTED": "Ausgewählt",
+  "ORDER_SUMMARY.HEADING": "Bestellübersicht",
+  "ORDER_SUMMARY.EMPTY_CART": "Ihr Warenkorb ist leer",
+  "ORDER_SUMMARY.TODAYS_TOTAL": "Die Summe von heute",
+  "ORDER_SUMMARY.BUTTON.CLEAR_CART": "Einkaufswagen löschen",
+  "ORDER_SUMMARY.BUTTON.CHECK_OUT": "Kasse"
+}
