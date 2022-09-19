@@ -1,19 +1,11 @@
 import './Tiles.scss';
 import Loading from "../loading/Loading";
 import { ProductTile } from "../index";
-import { useEffect, useState } from "react";
-import { ProductsCatalog } from "../../../../namespaces/products-catalog";
+import { useProducts } from "../../../../hooks";
 
 export default function Tiles(props: { type: string }) {
-    const [type] = useState(() => props.type);
-    const [products, setProducts] = useState(() => []);
-
-    useEffect(() => {
-        ProductsCatalog.getCatalog().subscribe((catalog) => {
-            const items = catalog[type]
-            setProducts(() => Object.values(items))
-        })
-    }, [props.type])
+    const { type } = props;
+    const [products] = useProducts(type);
 
     if (!products.length) {
         return <Loading />
