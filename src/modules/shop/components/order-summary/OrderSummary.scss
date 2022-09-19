@@ -1,55 +1,62 @@
 @import 'src/sass/variables';
 
-.OrderSummary {
+.MuiPaper-root {
   background-color: $white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px !important;
+  border-radius: 8px !important;
   display: flex;
   flex-direction: column;
   height: fit-content;
-  min-height: 415px;
-  padding: 20px;
 
-  h4 {
+  .MuiAccordionSummary-content {
     font-size: 22px;
     line-height: 34px;
     font-weight: 400;
     color: $soft-black;
-    border-bottom: 1px solid #f5f4f3;
-    margin-top: 0;
-    padding-bottom: 8px;
+
+    .MuiSvgIcon-root {
+      margin: auto 10px auto 0;
+    }
   }
 
-  .cart-item {
+  .MuiAccordionDetails-root {
+    border-top: 1px solid #f5f4f3;
     display: flex;
-    place-content: center space-between;
-    margin-bottom: 15px;
+    flex-direction: column;
+    row-gap: 15px;
+    min-height: 330px;
 
-    .item-name {
-      font-weight: 400;
-      font-size: 16px;
-      letter-spacing: .2px;
-      line-height: 25px;
-      color: $soft-black
+    .cart-item {
+      display: flex;
+      place-content: center space-between;
+
+      .item-name {
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: .2px;
+        line-height: 25px;
+        color: $soft-black
+      }
+
+      .item-qty {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .item-price {
+        margin-left: auto;
+      }
     }
 
-    .item-qty {
-      font-size: 14px;
-      font-weight: 400;
-    }
+    .Button {
+      margin-top: auto;
+      color: $white;
+      background-color: $soft-black;
 
-    .item-price {
-      margin-left: auto;
-    }
-  }
-
-  .Button {
-    margin-top: auto;
-    color: $white;
-    background-color: $soft-black;
-
-    &:hover {
-      background-color: $fuchsia;
-      border-color: $fuchsia;
+      &:hover {
+        background-color: $fuchsia;
+        border-color: $fuchsia;
+      }
     }
   }
 }

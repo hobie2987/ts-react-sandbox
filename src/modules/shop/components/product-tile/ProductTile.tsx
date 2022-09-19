@@ -10,10 +10,11 @@ import Button from '../button/Button';
 import Quantity from '../quantity/Quantity';
 import Price from "../price/Price";
 import { Cart } from "../../../../models/session";
-import { useCart } from "../../../../hooks";
+import { useCart, useContent } from "../../../../hooks";
 
 export default function ProductTile(props: { product: Product }) {
-    const [product]  = useState(() => props.product)
+    const [content] = useContent();
+    const [product]  = useState(() => props.product);
     const [limit] = useState(() => product.qty_limit === -1 ? Infinity : product.qty_limit);
     const [selected, setSelected] = useState(() => false)
     const [quantity, setQuantity] = useState(() => 0);
@@ -39,7 +40,7 @@ export default function ProductTile(props: { product: Product }) {
                 <span>{`${product.vendor}  ${product.model}`}</span>
             </div>
 
-            <img src={product.urls['icon']} alt={product.model} />
+            <img src={product.urls?.icon} alt={product.model} />
 
             <div className="amount">
                 <Quantity value={quantity}
@@ -51,7 +52,7 @@ export default function ProductTile(props: { product: Product }) {
             </div>
 
 
-            <Button label={selected ? 'Selected' : 'Select'}
+            <Button label={selected ? content['BUTTON.SELECTED'] : content['BUTTON.SELECT']}
                     selected={selected}
                     disabled={selected}
                     action={updateQuantity}/>

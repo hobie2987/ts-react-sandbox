@@ -2,9 +2,12 @@ import './OrderSummary.scss';
 import Button from "../button/Button";
 import Price from "../price/Price";
 import { OrderSession } from "../../../../namespaces/order-session";
-import { useCart, useSession } from "../../../../hooks";
+import { useCart, useContent, useSession } from "../../../../hooks";
+import {ExpandMore, ShoppingCart} from '@mui/icons-material';
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 
 export default function OrderSummary() {
+    const [content] = useContent();
     const [cart] = useCart();
     const [session] = useSession();
 
@@ -13,32 +16,46 @@ export default function OrderSummary() {
     }
 
     return(
-        <div className="OrderSummary">
-            <h4>Order Summary</h4>
-            {!cart.items.length &&
-                <div>
-                    <div>Your cart is empty</div>
-                    <div>Have an account?  Sign in to see your cart</div>
-                </div>
-            }
+        <Accordion className="OrderSummary" defaultExpanded={true} >
 
-            {cart.items.map(item => (
-                <div key={item.sku} className="cart-item">
+            <AccordionSummary expandIcon={<ExpandMore />} >
+                <ShoppingCart />
+                <span>{ content['ORDER_SUMMARY.HEADING'] }</span>
+            </AccordionSummary>
+
+            <AccordionDetails>
+                {cart.items.length < 1 &&
                     <div>
-                        <div className="item-name">{session.products[item.sku].name}</div>
-                        <div className="item-qty">Qty {item.quantity}</div>
+                        <div>{ content['ORDER_SUMMARY.EMPTY_CART'] }</div>
                     </div>
+                }
+
+                {cart.items.map(item => (
+                    <div key={item.sku} className="cart-item">
+                        <div>
+                            <div className="item-name">{session.products[item.sku].name}</div>
+                            <div className="item-qty">Qty {item.quantity}</div>
+                        </div>
+                        <div className="item-price">
+                            <Price value={session.products[item.sku].price * item.quantity} />
+                        </div>
+                    </div>
+                ))}
+
+                <div className="cart-item">
+                    <div className="item-name">{ content["ORDER_SUMMARY.TODAYS_TOTAL"] }</div>
                     <div className="item-price">
-                        <Price value={session.products[item.sku].price * item.quantity} />
+                        <Price value={cart.total} />
                     </div>
                 </div>
-            ))}
 
-            <div>Today's total {cart.items.length}</div>
-            {cart.items.length &&
-                <Button label="Clear Cart" action={clear} />
-            }
-            <Button label="Check Out" />
-        </div>
+                {cart.items.length > 0 &&
+                <Button label={ content["ORDER_SUMMARY.BUTTON.CLEAR_CART"] } action={clear} />
+                }
+
+                <Button label={ content["ORDER_SUMMARY.BUTTON.CHECK_OUT"] } />
+            </AccordionDetails>
+        </Accordion>
+
     )
 }
