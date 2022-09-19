@@ -1,13 +1,17 @@
-import { BehaviorSubject, Observable } from "rxjs";
+import {BehaviorSubject, distinctUntilChanged, Observable} from "rxjs";
 import { Https } from "./https";
 import { CART_ITEMS, SESSION } from "../models/api";
 import { Session, Cart } from "../models/session";
+import { exists } from "../utils/rxjs";
 
 export namespace OrderSession {
     const _session: BehaviorSubject<Session> = new BehaviorSubject<Session>(undefined);
 
     export function getSession(): Observable<Session> {
-        return _session.asObservable()
+        return _session.asObservable().pipe(
+            exists,
+            distinctUntilChanged()
+        )
     }
 
     export function initialize(): Promise<Session> {
@@ -43,7 +47,7 @@ export namespace OrderSession {
     //*********************PRIVATE FUNCTIONS*******************************
     function sync(session: Session): Session {
         _session.next(session);
-        console.log('Updating Order')
+        console.log('Updating Order', session)
         return session
     }
 

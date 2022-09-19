@@ -1,15 +1,14 @@
-import {BehaviorSubject, first, Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import { Https } from "./https";
 import { CATALOG } from "../models/api";
 import { Catalog } from "../models/catalog";
+import { exists } from "../utils/rxjs";
 
 export namespace ProductsCatalog {
     const _catalog: BehaviorSubject<Catalog> = new BehaviorSubject<Catalog>(undefined);
 
     export function getCatalog(): Observable<Catalog> {
-        return _catalog.asObservable().pipe(
-            first(cat => cat !== undefined && cat !== null )
-        )
+        return _catalog.asObservable().pipe(exists)
     }
 
     export function initialize(): Promise<any> {
