@@ -22,3 +22,16 @@ export function isObject(value: any): boolean {
 export function isArray(value: any): boolean {
     return Array.isArray(value)
 }
+
+export function isJSON(value: any): boolean {
+    if (!isString(value)) {
+        return false;
+    }
+
+    try {
+        const json = JSON.parse(value);
+        return isObject(json) && !isNull(json)
+    } catch (error) {
+        return false;
+    }
+}
