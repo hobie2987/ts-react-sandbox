@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Getting Started with ts-react-sandbox
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Quick Start Guide
+
+Upon cloning the repository, run the following commands in your Bash command line
+
+```bash
+~ npm install
+~ npm run start:https
+```
 
 ## Available Scripts
 
@@ -13,6 +22,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `npm run start:https`
+
+Runs the app in the development mode.\
+Generates certificates and run the app with SSL enabled.\
+Open [http://localhost.matterport.com:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.\
+You will need to add an entry to your development machine's host file to add the following entry:\
+
+127.0.0.1				local.matterport.com
 
 ### `npm test`
 
