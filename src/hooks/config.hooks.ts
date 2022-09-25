@@ -7,7 +7,7 @@ export const useConfig = (prop) => {
 
     useEffect(() => {
         setValue(() => _.get(settings, prop))
-    }, [settings, prop]);
+    }, [prop]);
 
     return [value];
 }
