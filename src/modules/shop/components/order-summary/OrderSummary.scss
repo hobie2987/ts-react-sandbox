@@ -9,13 +9,21 @@
   height: fit-content;
 
   .MuiAccordionSummary-content {
-    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    font-size: 16px;
     line-height: 34px;
-    font-weight: 400;
+    font-weight: 700;
     color: $soft-black;
+    padding: 5px 0;
 
     .MuiSvgIcon-root {
-      margin: auto 10px auto 0;
+      margin: auto;
+    }
+
+    .MuiBadge-badge {
+      background-color: $fuchsia;
     }
   }
 
@@ -26,9 +34,19 @@
     row-gap: 15px;
     min-height: 330px;
 
+    .empty-cart {
+      margin: auto;
+    }
+
     .cart-item {
       display: flex;
-      place-content: center space-between;
+      flex-direction: column;
+
+      .item-desc {
+        display: flex;
+        flex-direction: row;
+        place-content: center space-between;
+      }
 
       .item-name {
         font-weight: 400;
@@ -36,6 +54,11 @@
         letter-spacing: .2px;
         line-height: 25px;
         color: $soft-black
+      }
+
+      .item-remove {
+        padding: 0;
+        max-height: 24px;
       }
 
       .item-qty {
