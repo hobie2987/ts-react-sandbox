@@ -29,5 +29,13 @@
         top: 10px;
       }
     }
+
+    .MuiBackdrop-root {
+      @include breakpoint-md {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+    }
   }
 }

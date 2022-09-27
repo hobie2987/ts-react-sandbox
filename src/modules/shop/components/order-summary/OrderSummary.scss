@@ -1,12 +1,14 @@
 @import 'src/sass/variables';
 
-.MuiPaper-root {
+.MuiAccordion-root {
   background-color: $white;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px !important;
   border-radius: 8px !important;
   display: flex;
   flex-direction: column;
   height: fit-content;
+  width: 100%;
+  z-index: 2;
 
   .MuiAccordionSummary-content {
     display: flex;

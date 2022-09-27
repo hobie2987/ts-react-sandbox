@@ -6,7 +6,7 @@ import { useCart, useContent, useSession } from "../../../../hooks";
 import { Close, ExpandMore, ShoppingCart } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Badge, Divider, IconButton } from "@mui/material";
 
-export default function OrderSummary() {
+export default function OrderSummary(props: { onExpandChange: Function }) {
     const [content] = useContent();
     const [cart] = useCart();
     const [session] = useSession();
@@ -20,8 +20,12 @@ export default function OrderSummary() {
         OrderSession.removeItem(sku);
     }
 
+    function onChange(event, expanded): void {
+        props.onExpandChange(expanded);
+    }
+
     return(
-        <Accordion className="OrderSummary" defaultExpanded={true} >
+        <Accordion className="OrderSummary" defaultExpanded={true} onChange={onChange}>
 
             <AccordionSummary expandIcon={<ExpandMore />} >
                 <Badge color="primary"
@@ -70,6 +74,5 @@ export default function OrderSummary() {
                 <Button label={ content["ORDER_SUMMARY.BUTTON.CHECK_OUT"] } />
             </AccordionDetails>
         </Accordion>
-
     )
 }
